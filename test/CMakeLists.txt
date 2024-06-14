@@ -12,12 +12,12 @@ add_executable(
 
 add_executable(
   insert
-  theEndOfMe.cpp
+  rb_tree_insertion.cpp
 )
 
 add_executable(
   delete
-  theEndOfMe_v2.cpp
+  rb_tree_deletion.cpp
 )
 target_link_libraries(
   manual_operations PRIVATE rbtree Catch2::Catch2WithMain
