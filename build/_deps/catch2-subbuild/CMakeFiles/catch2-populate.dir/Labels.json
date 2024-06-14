@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/8d17396b0e1938965bb324a3e47f9af2/catch2-populate.rule"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/3f667918c7144be287d2bf727c31a865/catch2-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/7c81b542ce55e73a47e66a6c1204a829/catch2-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/7c81b542ce55e73a47e66a6c1204a829/catch2-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/7c81b542ce55e73a47e66a6c1204a829/catch2-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/7c81b542ce55e73a47e66a6c1204a829/catch2-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/7c81b542ce55e73a47e66a6c1204a829/catch2-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/7c81b542ce55e73a47e66a6c1204a829/catch2-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/7c81b542ce55e73a47e66a6c1204a829/catch2-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/Antonis/Desktop/Cpp/RBTree/build/_deps/catch2-subbuild/CMakeFiles/7c81b542ce55e73a47e66a6c1204a829/catch2-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"catch2-populate"
+		],
+		"name" : "catch2-populate"
+	}
+}
