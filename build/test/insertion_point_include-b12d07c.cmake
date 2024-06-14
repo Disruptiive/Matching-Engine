@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/Antonis/Desktop/Cpp/RBTree/build/test/insertion_point_tests-b12d07c.cmake")
-  include("C:/Users/Antonis/Desktop/Cpp/RBTree/build/test/insertion_point_tests-b12d07c.cmake")
-else()
-  add_test(insertion_point_NOT_BUILT-b12d07c insertion_point_NOT_BUILT-b12d07c)
-endif()

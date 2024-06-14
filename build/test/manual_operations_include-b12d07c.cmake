@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/Antonis/Desktop/Cpp/RBTree/build/test/manual_operations_tests-b12d07c.cmake")
-  include("C:/Users/Antonis/Desktop/Cpp/RBTree/build/test/manual_operations_tests-b12d07c.cmake")
-else()
-  add_test(manual_operations_NOT_BUILT-b12d07c manual_operations_NOT_BUILT-b12d07c)
-endif()
