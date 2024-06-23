@@ -1,35 +1,65 @@
 #pragma once
 
 #include <list>
-#include <memory>
+#include <compare>
+#include <optional>
 #include "order.h"
 
 class OrderTreeNode{
 private:
-    std::list<std::unique_ptr<Order>> ll;
+    std::list<Order> ll;
     double value;
 public:
     explicit OrderTreeNode(const double val) :  value(val)
     {}
 
-    explicit OrderTreeNode(std::unique_ptr<Order> ord) : value(ord->getPrice())
+    explicit OrderTreeNode(const Order& ord) : value(ord.getPrice())
     {
-        insert(std::move(ord));
+        insert(ord);
     }
 
-    void insert(std::unique_ptr<Order> ord){
+    void insert(Order ord){
         ll.push_back(std::move(ord));
     }
 
-    void remove(int amount){
-        while (ll.front()->getAmount() <= amount){
-            amount -= ll.front()->getAmount();
+    std::optional<int> remove(int amount){
+        while (!ll.empty() && ll.front().getAmount() <= amount) {
+            amount -= ll.front().getAmount();
             ll.pop_front();
         }
-        ll.front()->decreaseAmount(amount);
+        if (ll.empty() && amount > 0) {
+            return amount;
+        }
+        else if (!ll.empty() && ll.front().getAmount() > amount) {
+            ll.front().decreaseAmount(amount);
+            return {};
+        }
+        else {
+            return {};
+        }
     }
 
-     [[nodiscard]] const std::list<std::unique_ptr<Order>>& getList() const{
+     [[nodiscard]] const std::list<Order>& getList() const{
         return ll;
+    }
+
+    auto operator<=>(const OrderTreeNode& rhs) const {
+        return value <=> rhs.value;
+    }
+
+    bool operator==(const OrderTreeNode& rhs) const {
+        return value == rhs.value;
+    }
+
+    auto operator<=>(double rhs) const {
+        return value <=> rhs;
+    }
+
+    bool operator==(double rhs) const {
+        return value == rhs;
+    }
+
+    [[nodiscard]] double getValue() const {
+        return value;
     }
 };
