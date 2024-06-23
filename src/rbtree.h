@@ -15,7 +15,7 @@ struct Node{
     std::weak_ptr<Node<T>> parent;
     Color c;
 
-    Node(const T& value) : val(value), left(nullptr), right(nullptr), parent(), c(Color::red)
+    explicit Node(const T& value)  : val(value), left(nullptr), right(nullptr), parent(), c(Color::red)
     {}
 
     Node(const T& value, std::shared_ptr<Node<T>> left_, std::shared_ptr<Node<T>> right_, std::weak_ptr<Node<T>> parent_) : val(value), left(left_), right(right_), parent(parent_), c(Color::red)
@@ -65,7 +65,7 @@ struct Node{
 template <typename T>
 class RBTree{
 public:
-    RBTree(T val) : root(std::make_shared<Node<T>>(val))
+    explicit RBTree(T val) : root(std::make_shared<Node<T>>(val))
     {}
 
     RBTree() : root(nullptr)
@@ -84,11 +84,9 @@ public:
     std::shared_ptr<Node<T>> findParent(const T& val){
         auto node = root;
         while(node){
-            if (node->val > val && !node->left ) return node;
+            if (node->val > val && !node->left ||  (node->val < val && !node->right )) return node;
             else if (node->val > val && node->left) node = node->left;
-            else if (node->val < val && !node->right ) return node;
             else if (node->val < val && node->right) node = node->right;
-            else if (node->val == val) return nullptr;
             else return nullptr;
         }
         return nullptr;
