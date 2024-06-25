@@ -139,3 +139,49 @@ TEST_CASE("Order Tree", "[Order Tree Simple Insert Nodes 3]") {
 
 
 }
+
+TEST_CASE("Order Tree", "[Order Tree Deletion]") {
+    OrderTree ot;
+    ot.addOrder(Order("amazon", 1, 1, 5, 2.14, orderType::buy));
+
+    ot.addOrder(Order("amazon", 1, 2, 10, 2.14, orderType::buy));
+    ot.addOrder(Order("amazon", 1, 3, 15, 2.14, orderType::buy));
+
+    ot.addOrder(Order("amazon", 1, 4, 30, 2.04, orderType::buy));
+
+    ot.addOrder(Order("amazon", 1, 5, 50, 2.34, orderType::buy));
+    ot.addOrder(Order("amazon", 1, 2, 25, 2.34, orderType::buy));
+
+    ot.addOrder(Order("amazon", 1, 2, 25, 2.54, orderType::buy));
+    ot.addOrder(Order("amazon", 1, 2, 50, 2.54, orderType::buy));
+    ot.addOrder(Order("amazon", 1, 2, 25, 2.84, orderType::buy));
+
+    ot.addOrder(Order("amazon", 1, 2, 25, 3.04, orderType::buy));
+    ot.addOrder(Order("amazon", 1, 2, 25, 3.44, orderType::buy));
+
+    ot.addOrder(Order("amazon", 1, 2, 25, 3.54, orderType::buy));
+
+    ot.deleteOrder(2.84);
+
+
+
+
+
+    auto tree = ot.getTree();
+
+
+    REQUIRE(tree.getRoot()->val.getValue() == 2.54);
+    REQUIRE(tree.getRoot()->right->val.getValue() == 3.44);
+    REQUIRE(tree.getRoot()->right->right->val.getValue() == 3.54);
+    REQUIRE(tree.getRoot()->right->left->val.getValue() == 3.04);
+    REQUIRE(tree.getRoot()->left->val.getValue() == 2.14);
+
+    const auto& ll = tree.getRoot()->val.getList();
+    auto it = ll.begin();
+
+    REQUIRE(it->getAmount() == 25);
+    std::advance(it,1);
+    REQUIRE(it->getAmount() == 50);
+
+
+}
