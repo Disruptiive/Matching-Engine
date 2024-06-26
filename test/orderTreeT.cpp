@@ -161,7 +161,7 @@ TEST_CASE("Order Tree", "[Order Tree Deletion]") {
 
     ot.addOrder(Order("amazon", 1, 2, 25, 3.54, orderType::buy));
 
-    ot.deleteOrder(2.84);
+    ot.deleteOrderNode(2.84);
 
 
 

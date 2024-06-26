@@ -7,7 +7,6 @@
 class OrderTree{
 private:
     RBTree<OrderTreeNode,double> tree{};
-
 public:
     OrderTree() = default;
 
@@ -23,11 +22,18 @@ public:
         }
     }
 
-   void deleteOrder(const double price) {
+   void deleteOrderNode(const double price) {
         auto node = tree.find(price);
         if(node) {
             tree.deleteNode(node->val);
         }
+    }
+    double getMin(){
+        return tree.min()->val.getValue();
+    }
+
+    double getMax() {
+        return tree.max()->val.getValue();
     }
 
     RBTree<OrderTreeNode,double> getTree(){

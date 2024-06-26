@@ -19,6 +19,7 @@ TEST_CASE("Linked List Check", "[Linked List Init]") {
     REQUIRE(it->getAmount() == 10);
     std::advance(it,1);
     REQUIRE(it->getAmount() == 100);
+    REQUIRE(ot.getAmount() == 115);
 }
 
 TEST_CASE("Linked List Check", "[Linked List Remove]") {
@@ -33,6 +34,7 @@ TEST_CASE("Linked List Check", "[Linked List Remove]") {
     const auto it = ll.begin();
 
     REQUIRE(it->getAmount() == 100);
+    REQUIRE(ot.getAmount() == 100);
 }
 
 TEST_CASE("Linked List Check", "[Linked List Remove 2]") {
@@ -46,6 +48,7 @@ TEST_CASE("Linked List Check", "[Linked List Remove 2]") {
 
     const auto it = ll.begin();
     REQUIRE(it->getAmount() == 98);
+    REQUIRE(ot.getAmount() == 98);
 }
 
 TEST_CASE("Linked List Check", "[Linked List Remove 3]") {
@@ -59,6 +62,7 @@ TEST_CASE("Linked List Check", "[Linked List Remove 3]") {
 
     REQUIRE(ll.empty() == true);
     REQUIRE(*result == 18);
+    REQUIRE(ot.getAmount() == 0);
 }
 
 TEST_CASE("Linked List Check", "[Linked List Ordering]") {

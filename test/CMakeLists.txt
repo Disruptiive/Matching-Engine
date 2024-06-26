@@ -29,6 +29,11 @@ add_executable(
         orderTreeT
         orderTreeT.cpp
 )
+
+add_executable(
+        stock_test
+        stock_test.cpp
+)
 target_link_libraries(
   manual_operations PRIVATE rbtree Catch2::Catch2WithMain
 )
@@ -53,6 +58,10 @@ target_link_libraries(
         orderTreeT PRIVATE  orderTreeNode Catch2::Catch2WithMain
 )
 
+target_link_libraries(
+        stock_test PRIVATE  stock Catch2::Catch2WithMain
+)
+
 include(CTest)
 include(Catch)
 catch_discover_tests(manual_operations)
@@ -61,3 +70,4 @@ catch_discover_tests(insert)
 catch_discover_tests(delete)
 catch_discover_tests(linked_list_node)
 catch_discover_tests(orderTreeT)
+catch_discover_tests(stock_test)
